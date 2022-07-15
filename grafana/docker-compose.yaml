@@ -8,9 +8,9 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     volumes:
       - ./prometheus:/etc/prometheus
-      - type: bind
-        source: ./ssl/certificate
-        target: /etc/ssl/external
+      # - type: bind
+      #   source: ./ssl/certificate
+      #   target: /etc/ssl/external
     networks:
       - default
   grafana:
