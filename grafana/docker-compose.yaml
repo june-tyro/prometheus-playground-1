@@ -1,0 +1,26 @@
+version: '1.0'
+services:
+  prometheus:
+    image: prom/prometheus:${PROMETHEUS_TAG}
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - type: bind
+        source: ./ssl/certificate
+        target: /etc/ssl/external
+    networks:
+      - default
+  grafana:
+    depends_on: [prometheus]
+    ports:
+      - "3000:3000"
+    image: grafana/grafana:8.1.1
+    volumes:
+      - ./grafana:/etc/grafana
+    networks:
+      - default
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
