@@ -57,8 +57,8 @@ datasources:
   # <string> url
   url: http://localhost:9093
   # <bool> enable/disable basic auth
-  basicAuth: true
+  basicAuth: false
   # <string> basic auth username, if used
-  basicAuthUser: admin
+  basicAuthUser: 
   # <string> basic auth password, if used
-  basicAuthPassword: admin
+  basicAuthPassword: 
