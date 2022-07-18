@@ -53,12 +53,12 @@ datasources:
   # <string, required> datasource type. Required
   type: alertmanager
   # <string, required> access mode. direct or proxy. Required
-  access: proxy
+  access: direct
   # <string> url
   url: http://localhost:9093
   # <bool> enable/disable basic auth
-  basicAuth: false
+  basicAuth: true
   # <string> basic auth username, if used
-  basicAuthUser:
+  basicAuthUser: admin
   # <string> basic auth password, if used
-  basicAuthPassword:
+  basicAuthPassword: admin
