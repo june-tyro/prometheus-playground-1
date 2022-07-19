@@ -56,6 +56,9 @@ datasources:
   access: direct
   # <string> url
   url: http://localhost:9093
+  # Prometheus and Cortex (default) implementations of Alertmanager are supported
+  jsonData:
+    implementation: 'prometheus'
   # <bool> enable/disable basic auth
   basicAuth: false
   # <string> basic auth username, if used
