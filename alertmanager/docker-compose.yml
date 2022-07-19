@@ -6,11 +6,11 @@ services:
     - 9093:9093
     command:
     - --config.file=/etc/alertmanager/alertmanager.yml
-    - --storage.path=/alertmanager
+    - --storage.path=/alertmanager   
     volumes:
     # - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
     - ./alertmanager:/etc/alertmanager
-    deploy:
+    deploy: 
       mode: global
     restart: always
   prometheus:
@@ -55,7 +55,7 @@ services:
       - "3000:3000"
     image: grafana/grafana:8.1.1
     volumes:
-      - ./grafana:/etc/grafana
+      - ./grafana:/etc/grafana:rw
     networks:
       - default
     environment:
